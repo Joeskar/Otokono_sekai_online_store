@@ -1,0 +1,124 @@
+{% extends 'magaz/base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+<!-- Page Add Section Begin -->
+<section class="page-add">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="page-breadcrumb">
+                    <h2>Football jerseys<span>.</span></h2>
+                    <a href="#">National team jerseys</a>
+                    <a class="active" href="#">Football club jerseys</a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <img src="{% static 'img/add.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Page Add Section End -->
+
+<!-- Product Page Section Beign -->
+<section class="product-page">
+    <div class="container">
+        <div class="product-control">
+            <a href="#">Previous</a>
+            <a href="#">Next</a>
+        </div>
+        <div class="row">
+            {% for item in items %}
+            <div class="col-lg-6">
+                <div class="product-slider owl-carousel">
+                    <div class="product-img">
+                        <figure>
+                            <img src="{{item.product.image.url}}" alt="">
+                            <div class="p-status">new</div>
+                        </figure>
+                    </div>
+                    <div class="product-img">
+                        <figure>
+                            <img src="{{item.product.image.url}}" alt="">
+                            <div class="p-status">new</div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="col-lg-6">
+                {% for item in items %}
+                <div class="product-content">
+                    <h2>{{item.product.name}}</h2>
+                    <div class="pc-meta">
+                        <h5>${{item.product.price}}</h5>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <p>Джайро следует за Ринго в его бревенчатую хижину, надеясь закончить бой. Джайро посылает
+                        разрушительную атаку, направленную на ключицу Ринго, которая парализует всю левую сторону Ринго,
+                        если он вступит в контакт. После того, как осколок дерева пронзает Ринго прямо под его левой
+                        стороной плеча, Джайро убивает его, бросая один стальной шар прямо в Ринго. Перед смертью Ринго
+                        произносит: "Добро пожаловать...в мир истинных мужчин." </p>
+                    <ul class="tags">
+                        <li><span>Category :</span> Men’s Wear</li>
+                        <li><span>Tags :</span> man, shirt, dotted, elegant, cool</li>
+                    </ul>
+                    <div class="product-quantity">
+                        <div class="pro-qty">
+                            <input type="text" value="1">
+                        </div>
+                    </div>
+                    <a href="#" class="primary-btn pc-btn">Add to cart</a>
+                    <ul class="p-info">
+                        <li>Product Information</li>
+                        <li>Reviews</li>
+                        <li>Product Care</li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Product Page Section End -->
+
+<!-- Related Product Section Begin -->
+<section class="related-product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <h2>Related Products</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-product-item">
+                    <figure>
+                        <a href="#"><img src="{{product.image.url}}" alt=""></a>
+                        <div class="p-status popular">popular</div>
+                    </figure>
+                    <div class="product-text">
+                        <h6>{{product.name}}</h6>
+                        <p>${{product.price}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Related Product Section End -->
+
+</body>
+{% endblock %}
