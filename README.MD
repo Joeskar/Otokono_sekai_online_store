@@ -6,7 +6,7 @@
 
 ### Инструменты разработки
 
-**Стек:**
+*Стек:*
 
 - Python >= 3.10
 - Django == 4.1.3
@@ -18,7 +18,7 @@
 
 ##### 2) Клонировать репозиторий
 
-    git clone https://github.com/Joeskar/Otokono_sekai_online_store.git
+    git clone https://github.com/Joeskar/online_jersey_store.git
 
 ##### 3) Создать виртуальное окружение
 

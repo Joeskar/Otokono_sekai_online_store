@@ -13,8 +13,8 @@ venv
 
 violet
 
-__pycache__/
-*/__pycache__/
+_pycache_/
+*/_pycache_/
 *.py[cod]
 .pyc
 *.pyc
